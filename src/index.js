@@ -81,7 +81,7 @@ export default class TMS extends Component {
     }
   }
   shouldComponentUpdate(nextProps, nextState){
-    let {modalVisible, animating} = this.state;
+    const {modalVisible, animating} = this.state;
     if(modalVisible !== nextState.modalVisible || animating !== nextState.animating){
       return true;
     } else {
@@ -95,7 +95,7 @@ export default class TMS extends Component {
           return this.exitApp();
         }
         this.webview.goBack();//返回上一个页面
-        return true;//true 系统不再处理 false交给系统处理
+        return true; //true 系统不再处理 false交给系统处理
       }
     } catch (error) {
       return this.exitApp();
@@ -225,7 +225,7 @@ export default class TMS extends Component {
             onBarCodeRead={this.barcodeReceived.bind(this)}
             renderTopBarView={() => function () {}}
             renderBottomMenuView={() => function () {}}
-            hintText="请将发票左上角的二维码放入框内即可自动扫描"
+            hintText="将二维码/条形码放入框内, 即可自动扫描"
             hintTextPosition={80}
             style={{flex: 1}}
           />
