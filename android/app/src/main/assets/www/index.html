@@ -1,0 +1,28 @@
+<!doctype html><!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]--> <head> <title>配送员App</title> <meta charset="utf-8"> <meta name="description" content=""> <meta name="format-detection" content="telephone=no"> <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> <link rel="Shortcut Icon" href="img/zaofans_ic.png"> <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.4c94f571.css"> <link rel="stylesheet" href="styles/main.02735ccc.css"> <script src="lib/moment.js"></script> <!-- url 配置js文件--> <script src="config.js"></script> <!-- Cordova --> <script src="cordova.js"></script> <!-- Require --> <!--<script src="lib/require.js" data-main="init" ></script>--> </head> <body ng-app="deliveryUiApp"> <!-- Add your site or application content here --> <div class="navigation_wrapper" ng-init="enableNavigation = false" ng-swipe-left="enableNavigation = false" ng-swipe-right="enableNavigation = true&&!_needLogin"> <div class="navigation" ng-click="hideNavigation()" ng-show="enableNavigation" ng-class="{'navi-fadein':enableNavigation,'navi-fadeout':!enableNavigation}" ng-include="'views/navigator.tpl.html'"></div> <div class="navigation_content" ng-class="{'navi-container-fadeout' : enableNavigation,'navi-container-fadein' : (!enableNavigation&&!_needLogin)}"> <div class="container" ng-style="{'z-index' : _needLogin?0:1}" ng-include="'views/DeliveryList.tpl.html'" ng-show="currPage == '/main'" ng-if="!_needLogin" ng-controller="DeliverListController"></div> <div class="container" ng-style="{'z-index' : currPage == '/main'?0:1}" id="container" ng-view></div> <div class="container-mask" ng-click="hideNavigation()" ng-if="enableNavigation"></div> </div> </div> <div ng-repeat="loading in loading_quene" class="loading" style="display: block"> <img src="images/loading.3a19d385.gif" alt="loading" width="32" height="32"> </div> <div class="guide_picture" ng-style="{display : guideClose?'none':'block'}"></div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>(function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');</script> <script type="text/ng-template" id="alert"><h1 ng-bind-html="alertMsg"></h1></script> <script type="text/ng-template" id="modalDialogId"><div class="ngdialog-message" ng-click="closeThisDialog()">
+      <p ng-cloak>{{ngDialogData.msg}}</p>
+    </div>
+    <div class="ngdialog-buttons">
+      <button type="button" class="ngdialog-button-primary ngdialog-button-left" ng-click="confirm()">
+        确定
+      </button>
+      <button type="button" class="ngdialog-button-primary ngdialog-button-right" ng-click="closeThisDialog()">
+        取消
+      </button>
+    </div></script> <!--[if lt IE 9]>
+  <script src="scripts/pollyfill.3c68790b.js"></script>
+  <![endif]--> <script src="scripts/vendor.b0621a9a.js"></script> <script src="scripts/scripts.512ced56.js"></script> </body> </html>

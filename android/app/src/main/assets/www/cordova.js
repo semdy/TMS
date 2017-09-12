@@ -1,0 +1,1 @@
+console.log('Not Cordova Real Phone');

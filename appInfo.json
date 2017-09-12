@@ -1,0 +1,10 @@
+{
+  "android": {
+    "appversion": "1.0.0",
+    "appurl": ""
+  },
+  "ios": {
+    "appversion": "1.0.0",
+    "appurl": ""
+  }
+}
